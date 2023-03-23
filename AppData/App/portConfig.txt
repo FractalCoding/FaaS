@@ -15,3 +15,6 @@ ChatGPT:
 Bard:
 	Listening: 6660
 	Sending: 6666
+SecretManger:
+	Listening: 7770
+	Sending: 7777

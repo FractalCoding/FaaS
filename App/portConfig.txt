@@ -1,0 +1,17 @@
+Port Configuration:
+
+Angular: 
+	Listening: 3330
+	Sending: 3333
+Node:
+	Listening: 4440
+	Sending: 4444
+Firestore:
+	Listening: 5550
+	Sending: 5555
+ChatGPT: 
+	Listening: 6660
+	Sending: 6666
+Bard:
+	Listening: 6660
+	Sending: 6666

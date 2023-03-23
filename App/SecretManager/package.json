@@ -1,9 +1,8 @@
 {
-  "name": "angularserver",
+  "name": "secretmanagerserver",
   "version": "1.0.0",
-  "description": "Frontend of application.",
+  "description": "Manages API Keys and other secrets.",
   "main": "/app/server.js",
-  "start": "PORT=3333",
   "dependencies": {
     "express": "^4.17.1"
   }

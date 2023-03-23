@@ -1,0 +1,12 @@
+This app will serve as a direct pitch to Google as a shared learning concept. The idea is to eventually implement Bard and run entirely within the Google framework. This container file serves as a placeholder for when the Bard API becomes
+available to switch the platform from ChatGPT to Bard, as I believe Bard and its features are better suited to this platform's goal. For now the platform will be using ChatGPT as part of the pitch, but the goal is to eventually shift this
+platform to use Bard--even so far as to switch out the Radisys API with the Google Hangouts API if necessary. 
+
+Also I think I'm getting a little obsessive over containers but I'm the person who has a *lot* of physical containers too for very tiny categories so I guess I very naturally try to containerize microservices as tiny as possible to make
+them as modular as possible...
+
+I mean theoretically if I get two talking it shouldn't be... *too* hard to get them *all* talking with each other? It's just the same concept repeated over and over again... once I figure it out for two containers the rest should be 
+simple... but I will make the ports for Bard and ChatGPT the same and have them return the same type of data so that it quite literally would be a plug and chug... 
+
+This file serves as a placeholder for the FOSS end of things--the code for both ChatGPT and Bard will be documented, so that you can pick and choose which service you'd like to use. This folder will be bare until the Bard API becomes
+available. If you do have access to the Bard API before I do please feel free to start a pull request and add your own Bard element here.

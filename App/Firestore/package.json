@@ -1,0 +1,9 @@
+{
+  "name": "firestoreserver",
+  "version": "1.0.0",
+  "description": "Database management.",
+  "main": "/app/server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

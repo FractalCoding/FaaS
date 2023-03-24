@@ -21,3 +21,20 @@ I think this is the tutorial I'll be following to integrate K8s into my app...
 Ok from what I understand, I am doing the right thing with this worker node. I need to expose all the necessary ports. I sort of played with the idea in
 my head... I think creating a mini service container without gcloud that routes internal traffic within a pod will be one layer... and that this service 
 container
+
+More TODO:
+-Create IAM, Kubernetes, Secrets service accounts. 
+-The Google API node module goes somewhere, figure out where
+-Are these API tokens secure? Can I call them in my Radisys node module directly? Can I pull the API token in the service pod and pass it into the Radisys pod?
+-Am I still using BigQuery for this? Is BigQuery better than Firestore? Need realtime data access but BigQuery may be too much.
+-Where is BigQuery being called? When the Radisys node outputs text to go to AI, do they both pass through a DB node? Could configure network topology to force this.
+-DB node also Google API secret... it should be secure...
+-K8s must be public for public IP to be exposed...
+-Worker node is service, each mini container is a pod... configure network topology so they can talk to each other.
+-Deploy in GKE as Autopilot
+-Get external IP address, embed in WordPress
+-While I'm at it, lets throw in some Pub/Sub push notifications?
+-I did the hard part of research, now it's a matter of just setting everything up. Everything else should be straight forward.
+
+Good lord I just straight up broke for about 2 hours because my brain legit threw an Out of Memory exception and refused to learn more until I rested... I need to sleep...
+If I work diligently I can get this done by tonight.

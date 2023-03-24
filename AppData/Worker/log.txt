@@ -1,0 +1,23 @@
+TODO:
+
+This container needs to be a central server of which spins up all the other containers when it is launched, and allows them to communicate with each other. I think using this one central server for all the containers to talk to
+is a better framework, because the network topology between the 5-6 containers would get messy otherwise. Also this way if one container goes down, it is relatively easy to restart it without affecting the rest of the app.
+I'm just... confused as to how to implement "pod" logic with this... I know this group of containers constitutes the pod that is my app... but I suppose I will get the network topology built first, and then work on kubelet/kubectl...
+
+prom-client: https://www.npmjs.com/package/prom-client
+This is an IBM suggested package to monitor and log node.js IO
+Generates a JSON file log? Could write to BigQuery, but there's probably a specific service dedicated to saving logs I need to look into...
+...am I overcomplicating this? I know this could get a bit expensive, but I am sure my dad would happily support this project, as long as I'm careful
+and doing everything the right way... as long as I'm doing everything *properly* I think he'll fund this project, at least for the duration of the
+hackathon... GCP Logging is a thing... it would be the right tool for me to use instead of prom-client... this is also a worker node that has gcloud
+built in... so theoretically it shouldn't be too hard to integrate logging in this? I would imagine this is an *extremely* important part of cloud 
+native apps, so I should integrate it... looking into the tutorials it is designed to be used with GKE anyway. So it is the right tool for the right job.
+
+Kubernetes: https://developer.ibm.com/articles/nodejs-kubernetes-basics/
+Of all the K8s tutorials I've looked at, this one is the most straightforward. I do like IBM quite a bit, I've played in their cloud env before. I think Watson is very cool... but yes
+I think this is the tutorial I'll be following to integrate K8s into my app...
+
+
+Ok from what I understand, I am doing the right thing with this worker node. I need to expose all the necessary ports. I sort of played with the idea in
+my head... I think creating a mini service container without gcloud that routes internal traffic within a pod will be one layer... and that this service 
+container

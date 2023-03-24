@@ -1,11 +1,16 @@
-FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine
-RUN apt-get install npm
+# Installs gcloud sdk
+FROM google/cloud-sdk:latest
+# Installs node dependencies
 WORKDIR /app
+RUN apt -y install nodejs
+RUN apt -y install npm
 COPY package.json /app
 RUN npm install
+# Copies working files
 COPY . /app
-RUN chown -R node:node /app
+# Exposes network port IO
 EXPOSE 8080
 USER node
+# Kills process after 1m of inactivity to preserve compute
 CMD timeout 1m node server.js
 CMD [ "npm", "start" ]

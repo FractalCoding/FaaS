@@ -1,0 +1,9 @@
+{
+  "name": "workerserver", 
+ "version": "1.0.0",
+  "description": "Worker container, orchestrates containers in app.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+spec:
+  containers:
+    - name: web
+      image: #Artifact Registry Web Image
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bot
+spec:
+  containers:
+    - name: bot
+      image: #Artifact Registry Bot Image
+

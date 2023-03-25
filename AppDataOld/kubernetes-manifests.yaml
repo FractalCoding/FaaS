@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faas
+  labels:
+    app: faas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: faas
+  strategy:
+    type: RollingUpdate
+	rollingUpdate:
+	  maxSurge: 1
+	  maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: faas
+    spec:
+	  volumes:
+	    - name: podVol
+		  persistentVolumeClaim:
+		    claimName: pvc
+      containers:
+      - image: [insert link to angular image]
+        name: angular
+        ports:
+        - containerPort: [specify angular port]
+		volumeMounts:
+		  - mountPath: "/vol"
+		    name: pvc-vol		
+	  - image: [insert link to Node image]
+        name: node
+        ports:
+        - containerPort: [specify node port]
+		volumeMounts:
+		  - mountPath: "/vol"
+		    name: pvc-vol
+	  - image: [insert link to bigtable image]
+        name: bigtable
+        ports:
+        - containerPort: [specify bigtable port]
+		volumeMounts:
+		  - mountPath: "/vol"
+		    name: pvc-vol
+	  # Modular to use ChatGPT or Bard or preferred AI client
+	  - image: [insert link to aibase image]
+        name: aibase
+        ports:
+        - containerPort: [specify aibase port]
+		volumeMounts:
+		  - mountPath: "/vol"
+		    name: pvc-vol
+	  # Modular to use Radisys API or Google native API	
+	  - image: [insert link to vserv image]
+	    name: vserv
+		ports:
+		- containerPort: [specify vserv port]
+		volumeMounts:
+		  - mountPath: "/vol"
+		    name: pvc-vol
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+	name: pvc
+spec:
+	accessModes:
+		- ReadWriteOnce
+	resources:
+		requests:
+			storage:30Mi storageClassName: standard-rwo

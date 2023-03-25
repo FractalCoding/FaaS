@@ -4,7 +4,7 @@ FROM google/cloud-sdk:latest
 WORKDIR /app
 RUN apt -y install nodejs
 RUN apt -y install npm
-COPY package.json /app
+COPY packages.json /app
 RUN npm install
 # Copies working files
 COPY . /app

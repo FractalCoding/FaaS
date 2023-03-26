@@ -4,7 +4,7 @@
   "description": "Worker container, orchestrates containers in app.",
   "main": "server.js",
   "dependencies": {
-   	"ejs": "*",
+   	    "ejs": "3.1.6",
 	 "express": "^4.17.1"
   }
 }
